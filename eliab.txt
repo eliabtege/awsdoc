@@ -1,0 +1,32 @@
+`How to push to github your website creating exercise
+Login to your linux using example in your ec2 instance connect tab
+ssh -i "aws-eliab-kp.pem" ec2-user@52.91.70.114
+then run the command 'yum install git' to help you recognize git commands otherwise you'll get error message saying command not found
+then you run this command to generate public/private key to your github repository
+ssh-keygen -t ed25519 -C "eliabtege@gmail.com"
+then enter 3 times go to the next command
+then you run this command 
+eval "$(ssh-agent)"
+then you run this command
+cat ~/.ssh/id_ed25519.pub
+then you initialize git to start the push process by the command
+git init
+then you clone your git repository with it's URL like the below command
+git clone git@github.com:eliabtege/awsdoc.git
+then you create a branch with the below command
+git checkout -b eliab
+then you add the file you want to push by the command
+git add index.html
+then you commit your added file with a descriptive message by the command
+git commit -m "index.html to github"
+then you make your repository available to a remote location by the command
+git remote add awsdoc git@github.com:eliabtege/awsdoc.git
+then you push the file to your repository branch you created as the below command
+git push -u awsdoc eliab
+To add subsequent files you continue by the command
+git add 'the name of your file' 
+the you commit your added file with a descriptive message by the command
+git commit -m "dockerfile to github"
+then you push the file to your repository branch you created as the below command
+git push -u awsdoc eliab
+then you're done
