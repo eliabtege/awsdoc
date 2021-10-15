@@ -1,0 +1,26 @@
+-->create vpc
+-->create subnet and select the vpc you created
+-->click actions and modify auto assign IP settings and enable
+-->create internet gateway and attach to vpc
+-->create route table and select the vpc you want to use
+-->select the created route table and hit subnet associations and edit subnet associations and select the available subnet and save associations
+-->select the created route table again and hit routes and edit routes then click add route and select 0.0.0.0/0 and on the target section select internet gateway and select the internet gateway you created and save changes and continue to the next step
+-->go to ec2 dashboard and hit launch instances
+-->select amazon linux free tier eligible
+-->select the vpc you created (subnets will be automatically selected) and hit next until Launch comes then create a key pair and download it then hit launch instances then hit view instances
+-->select the instance you created and hit connect and choose the ssh client tab then run chmod 400 "your key pair.pem" in gitbash (makesure to be on the directory where your key pair is located) and hit
+ssh -i  "your key pair.pem" ec2-user@"your public IP address" 
+-->then type yes and you will start accessing amazon linux
+-->change from ec2-user to root by typing the command without the quotation "sudo su"
+-->then type the command without the quotation "sudo yum update -y"
+-->then type the command without the quotation "sudo amazon-linux-extras install docker" and type 'y'
+-->then type the command without the quotation "sudo service docker start"
+-->then type the command without the quotation "sudo usermod -a -G docker ec2-user" inorder to run docker commands without typing sudo infront of each line
+-->then type without the quotation "docker info"
+-->then type without the quotation "vi dockerfile"
+-->press i on your keyboard and type without the quotation "FROM python"
+-->then press esc on your keyboard and type without the quotation ":wq!"
+-->then type without the quotation "docker build ./"
+-->then type without the quotation "docker images"
+-->then type without the quotation "docker run -it python /bin/bash"
+-->then docker container is created and hit exit to go back to root user and the exit again to go back to ec2-user and hit exit again for the docker connection to be closed
