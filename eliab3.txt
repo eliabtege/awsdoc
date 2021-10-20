@@ -16,4 +16,3 @@ then run 'docker ps' to see your container and image and assigned port
 assign different ports each time you create a website 
 then checkout your website using your ec2 instance it's public ipv4 address
 
-.//
