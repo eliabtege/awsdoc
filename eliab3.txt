@@ -1,0 +1,19 @@
+open gitbash
+make sure to be on downloads directory or your key pair folder
+select your running ec2 instance and click connect
+on ssh client tab copy #3 and run on gitbash, 
+then copy example and run on gitbash
+on ec2-user mkdir any filename, 
+then  cd to the filename you created, 
+then create .html file using vi x.html and insert your website script 
+then create dockerfile using the vi dockerfile command go to docker hub website to create image and on the search bar type nginx and 
+copy what's inside the parenthesis
+"FROM nginx:alpine
+COPY .  /usr/share/nginx/html"
+then run the command to build an image 'docker build -t website .' 
+then run 'docker run -d --name first_attempt -p8080:80 website' --name implies the name of your container; rename the name of your container every time you use a different website -d implies detachment -p implies assigning a port follwed by the name of your folder
+then run 'docker ps' to see your container and image and assigned port
+assign different ports each time you create a website 
+then checkout your website using your ec2 instance it's public ipv4 address
+
+
